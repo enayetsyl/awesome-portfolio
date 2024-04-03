@@ -1,0 +1,5 @@
+export { default as Hero } from '../Component/Hero'
+export { default as Loading } from '../Component/Loading'
+export { default as ServiceCard } from '../Component/ServiceCard'
+export { default as Services } from '../Component/Services'
+export { default as Skills } from '../Component/Skills'
