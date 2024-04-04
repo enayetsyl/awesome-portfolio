@@ -1,10 +1,7 @@
 import { useSharedContext } from "../context/SharedContext"
-import EducationCard from "./EducationCard"
+import {EducationCard} from "../constant/index"
 
 const Education = () => {
-
-
- 
   const { userData } = useSharedContext()
   return (
     <div className="pb-20">

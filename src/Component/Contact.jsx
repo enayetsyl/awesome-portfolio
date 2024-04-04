@@ -1,4 +1,4 @@
-import ContactForm from './ContactForm'
+import {ContactForm} from '../constant/index'
 import { useSharedContext } from '../context/SharedContext'
 
 const Contact = () => {

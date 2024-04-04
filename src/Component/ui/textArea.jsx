@@ -58,4 +58,4 @@ const TextArea = React.forwardRef(({ className,item, handleChange, type, ...prop
 });
 TextArea.displayName = "TextArea";
 
-export { TextArea };
+export  default TextArea;

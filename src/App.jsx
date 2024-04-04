@@ -1,19 +1,17 @@
 
 import { ToastContainer } from "react-toastify"
-import Contact from "./Component/Contact"
-import Education from "./Component/Education"
-import Experience from "./Component/Experience"
-import Projects from "./Component/Projects"
-import Social from "./Component/Social"
-import Testimonial from "./Component/Testimonial"
-import { Hero, Services, Skills} from "./constant"
+import { Contact, Education, Experience, Hero, Projects, Services, Skills, Social, Testimonial } from "./constant"
 import 'react-toastify/dist/ReactToastify.css';
+import Sorry from "./Component/Sorry";
+import { useSharedContext } from "./context/SharedContext";
 
 const App = () => {
-
+  const { userData } = useSharedContext()
   return (
     <div className="bg-slate-950">
-    <Hero/>
+    {
+      userData.length > 0 ? (<>
+      <Hero/>
    <Services/>
    <Skills/>
    <Projects/>
@@ -22,6 +20,8 @@ const App = () => {
    <Education/>
    <Contact/>
    <Social/>
+      </>) :  <Sorry/>
+    }
    <ToastContainer />
     </div>
   )

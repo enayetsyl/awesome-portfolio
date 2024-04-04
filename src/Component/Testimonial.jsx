@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+import { InfiniteMovingCards } from "../constant/index";
 import { useSharedContext } from "../context/SharedContext";
 
 function Testimonial() {

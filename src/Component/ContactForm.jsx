@@ -1,26 +1,16 @@
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { cn } from "../utils/cn";
+// import { Label,Input,TextArea } from '../constant/index'
 
-import { TextArea } from "./ui/textArea";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { cn } from '../utils/cn';
+import Label from "./ui/label";
+import Input from "./ui/input";
+import TextArea from "./ui/textArea";
+import { useSharedContext } from "../context/SharedContext";
 
 function ContactForm() {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    toast.success('Form Submitted')
-    setFirstName('')
-    setLastName('')
-    setEmail('')
-    setMessage('')
-  };
+  
+  const { firstName, setFirstName,lastName, setLastName,email, setEmail,message, setMessage,handleContactFormSubmit } = useSharedContext()
 
   return (
     <div className="max-w-md w-full mx-auto  md:rounded-2xl p-4 md:p-8 shadow-input bg-[#373f77] dark:bg-black rounded-xl">
@@ -31,7 +21,7 @@ function ContactForm() {
       Reach Out and Let's Make Something Awesome
       </p>
 
-      <form className="my-8" onSubmit={handleSubmit}>
+      <form className="my-8" onSubmit={handleContactFormSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
@@ -81,6 +71,8 @@ function ContactForm() {
   );
 }
 
+export default ContactForm
+
 const BottomGradient = () => {
   return (
     <>
@@ -90,7 +82,7 @@ const BottomGradient = () => {
   );
 };
 
-export default ContactForm
+
 
 const LabelInputContainer = ({ children, className }) => {
   return (

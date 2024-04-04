@@ -6,7 +6,7 @@ const Loading = () => {
       <CutoutTextLoader
         height='600px'
         background="black"
-        // NOTE: Using GIFs for the background looks super cool :)
+       
         imgUrl={loadingImage3}
       />
     </div>

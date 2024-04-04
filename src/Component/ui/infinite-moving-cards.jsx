@@ -1,9 +1,7 @@
-
-
 import { cn } from "../../utils/cn";
 import  { useEffect, useRef, useState } from "react";
 
-export const InfiniteMovingCards = ({
+const InfiniteMovingCards = ({
   items,
   direction = "left",
   speed = "fast",
@@ -113,3 +111,6 @@ export const InfiniteMovingCards = ({
     </div>
   );
 };
+
+
+export default InfiniteMovingCards

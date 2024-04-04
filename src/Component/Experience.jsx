@@ -1,4 +1,4 @@
-import { BackgroundGradient } from "./ui/background-gradient";
+import { BackgroundGradient } from "../constant/index";
 import { useSharedContext } from "../context/SharedContext";
 
 function Experience() {

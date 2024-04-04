@@ -9,16 +9,15 @@ import {
   animate,
 } from "framer-motion";
 import { useSharedContext } from "../context/SharedContext";
-import { Loading } from "../constant";
 
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
  const Hero = () => {
   const color = useMotionValue(COLORS_TOP[0]);
-  const {isLoading, userData} = useSharedContext()
-  const [quoteTooltip, setQuoteTooltip] = useState(false);
-  const [descriptionTooltip, setDescriptionTooltip] = useState(false);
+  const {isLoading, userData,quoteTooltip, setQuoteTooltip,descriptionTooltip, setDescriptionTooltip} = useSharedContext()
+
+
   useEffect(() => {
     animate(color, COLORS_TOP, {
       ease: "easeInOut",

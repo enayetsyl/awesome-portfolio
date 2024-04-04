@@ -3,21 +3,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiAlertCircle } from "react-icons/fi";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import { useSharedContext } from "../../context/SharedContext";
 
-export const HoverEffect = ({ items, className }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+ const HoverEffect = ({ items, className }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedFilters, setSelectedFilters] = useState([]);
-
-  const handleFilterChange = (filter) => {
-    if (selectedFilters.includes(filter.trim())) {
-      setSelectedFilters(selectedFilters.filter((f) => f !== filter.trim()));
-    } else {
-      setSelectedFilters([...selectedFilters, filter.trim()]);
-    }
-  };
-
-  //  React -14, CSS -14, Nextjs -11, MERN -13 ,Tailwind -1,
+  const { hoveredIndex, setHoveredIndex,selectedFilters,  handleFilterChange} = useSharedContext()
+  
 
   const filteredItems = selectedFilters?.length
   ? items?.filter((item) =>
@@ -26,11 +17,6 @@ export const HoverEffect = ({ items, className }) => {
       )
     )
   : items;
-
-
-
-  
-  
 
   useEffect(() => {
     if(isOpen){
@@ -45,7 +31,7 @@ export const HoverEffect = ({ items, className }) => {
   return (
     <>
     <div className="flex justify-center mt-4 space-x-4 flex-wrap gap-5">
-    {uniqueTechStack(items).map((tech) => (
+    {uniqueTechStack(items)?.map((tech) => (
       <button
         key={tech}
         onClick={() => handleFilterChange(tech)}
@@ -107,6 +93,8 @@ export const HoverEffect = ({ items, className }) => {
     </>
   );
 };
+
+export default HoverEffect
 
 export const Card = ({ className, children }) => {
   return (
@@ -208,7 +196,7 @@ const SpringModal = ({ isOpen, setIsOpen, item }) => {
 const uniqueTechStack = (items) => {
   const techStackSet = new Set();
   items?.forEach((item) => {
-    item.techStack.forEach((tech) => techStackSet.add(tech.trim()));
+    item?.techStack?.forEach((tech) => techStackSet?.add(tech.trim()));
   });
   return Array.from(techStackSet);
 };

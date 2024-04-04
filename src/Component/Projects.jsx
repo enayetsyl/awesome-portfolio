@@ -1,5 +1,5 @@
 import { useSharedContext } from "../context/SharedContext";
-import { HoverEffect } from "./ui/card-hover-effect";
+import { HoverEffect } from "../constant/index";
 
 
  function Projects() {
