@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className="bg-slate-950">
     {
-      userData.length > 0 ? (<>
+      userData?._id ? (<>
       <Hero/>
    <Services/>
    <Skills/>
