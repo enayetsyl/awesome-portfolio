@@ -7,9 +7,9 @@ const Services = () => {
   return (
     <div className="pt-20 bg-slate-950">
       <div >
-      <div className="bg-slate-800 flex h-48 items-center justify-center ">
+      
       <h1 className="max-w-3xl  text-center text-3xl font-medium leading-tight  sm:text-5xl sm:leading-tight md:text-7xl md:leading-tight mb-5 mx-auto text-white uppercase">Services</h1>
-      </div>
+      
       <div className="grid grid-cols-1 lg:grid-cols-2 max-w-5xl mx-auto">
         {
           userData && userData?.services?.map(service => 

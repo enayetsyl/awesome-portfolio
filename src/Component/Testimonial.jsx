@@ -5,7 +5,7 @@ function Testimonial() {
   const { userData } = useSharedContext()
   return (
    <div className="">
-<div className="bg-slate-800 flex h-48 items-center justify-center mb-20">
+<div className=" flex  items-center justify-center mb-20">
       <h1 className="max-w-3xl  text-center text-3xl font-medium leading-tight  sm:text-5xl sm:leading-tight md:text-7xl md:leading-tight  mx-auto text-white uppercase">
         Testimonials
       </h1></div>

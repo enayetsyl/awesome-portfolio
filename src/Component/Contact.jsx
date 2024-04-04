@@ -5,7 +5,7 @@ const Contact = () => {
   const { userData } = useSharedContext()
   return (
     <div className='pb-20'>
-   <div className="flex h-48 items-center justify-center bg-slate-800">
+   <div className="flex items-center justify-center ">
         <span className="max-w-3xl  text-center text-3xl font-medium leading-tight  sm:text-5xl sm:leading-tight md:text-7xl md:leading-tight mx-auto text-white uppercase">
           Contact Me
         </span>

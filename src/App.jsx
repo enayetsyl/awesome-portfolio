@@ -1,30 +1,41 @@
-
-import { ToastContainer } from "react-toastify"
-import { Contact, Education, Experience, Hero, Projects, Services, Skills, Social, Testimonial } from "./constant"
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import {
+  Contact,
+  Education,
+  Experience,
+  Hero,
+  Projects,
+  Services,
+  Skills,
+  Social,
+  Testimonial,
+} from "./constant";
+import "react-toastify/dist/ReactToastify.css";
 import Sorry from "./Component/Sorry";
 import { useSharedContext } from "./context/SharedContext";
 
 const App = () => {
-  const { userData } = useSharedContext()
+  const { userData } = useSharedContext();
   return (
     <div className="bg-slate-950">
-    {
-      userData?._id ? (<>
-      <Hero/>
-   <Services/>
-   <Skills/>
-   <Projects/>
-   <Testimonial/>
-   <Experience/>
-   <Education/>
-   <Contact/>
-   <Social/>
-      </>) :  <Sorry/>
-    }
-   <ToastContainer />
+      {userData?._id ? (
+        <>
+          <Hero />
+          <Services />
+          <Skills />
+          <Projects />
+          <Testimonial />
+          <Experience />
+          <Education />
+          <Contact />
+          <Social />
+        </>
+      ) : (
+        <Sorry />
+      )}
+      <ToastContainer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

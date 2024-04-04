@@ -4,9 +4,9 @@ import { useSharedContext } from "../context/SharedContext";
 
 const Skills = () => {
   return (
-    <div className="bg-slate-800">
-      <div className="flex h-48 items-center justify-center">
-        <span className="max-w-3xl  text-center text-3xl font-medium leading-tight  sm:text-5xl sm:leading-tight md:text-7xl md:leading-tight mb-5 mx-auto text-white uppercase">
+    <div className="">
+      <div className="flex  items-center justify-center">
+        <span className="max-w-3xl  text-center text-3xl font-medium leading-tight  sm:text-5xl sm:leading-tight md:text-7xl md:leading-tight mx-auto text-white uppercase">
           Skills
         </span>
       </div>
